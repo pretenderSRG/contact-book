@@ -1,2 +1,4 @@
-package org.example.contact_book.util;public class FileStorageService {
+package org.example.contact_book.util;
+
+public class FileStorageService {
 }

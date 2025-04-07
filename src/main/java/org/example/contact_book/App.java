@@ -1,14 +1,14 @@
 package org.example.contact_book;
 
-import org.example.contact_book.model.Contact;
 import org.example.contact_book.service.ContactManager;
+import org.example.contact_book.service.ContactSearch;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Проста книга з контактами");
 
         Scanner scanner = new Scanner(System.in);
         final String pathToContactBase = "src/main/resources/contact_book.bin";
@@ -35,15 +35,15 @@ public class App {
                     case 1:
                         try {
 
-                        contactManager.createContact(scanner);
+                            contactManager.createContact(scanner);
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         } finally {
                             break;
                         }
                     case 2:
-                        Contact searchingContact = new Contact();
-                        System.out.println("Search");
+                        ContactSearch contactSearch = new ContactSearch(contactManager);
+                        contactSearch.search(scanner);
                         break;
                     case 3:
                         contactManager.showAllContacts();
@@ -51,7 +51,7 @@ public class App {
                     default:
                         System.out.println("Не правильний ввід. Введіть цифру 0 - 3");
                 }
-            }catch (InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Введіть цифру від 0 до 3");
                 scanner.nextLine();
             }

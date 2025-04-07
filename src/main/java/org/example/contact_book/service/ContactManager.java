@@ -3,8 +3,8 @@ package org.example.contact_book.service;
 import org.example.contact_book.model.Contact;
 import org.example.contact_book.util.FileStorageService;
 
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ContactManager {
     private FileStorageService fileStorage;
@@ -54,8 +54,10 @@ public class ContactManager {
         if (contactStorage.containsKey(contactPhoneNumber)) {
             System.out.println("Контакт з таким номером вже існує");
         } else {
-            if (isPhoneNumberValid(contactPhoneNumber)) {
+            if (isPhoneNumberValid(contactPhoneNumber) && isEmailValid(contact.getEmail())) {
                 contactStorage.put(contactPhoneNumber, contact);
+                System.out.println("Додано контакт:");
+                System.out.println(contact);
             } else {
                 System.out.println("Не правильний номер телефону обо email");
             }
@@ -85,7 +87,6 @@ public class ContactManager {
 
         putContactToBase(newContact);
         fileStorage.writeDataToFile(contactStorage);
-        System.out.println("Контакт створено: " + newContact);
 
     }
 
@@ -93,12 +94,16 @@ public class ContactManager {
         if (contactStorage.isEmpty()) {
             System.out.println("Список контактів порожній");
         } else {
-             for (Map.Entry<String, Contact> entry : contactStorage.entrySet()) {
-                 System.out.println(entry.getValue().getName() + entry.getValue().getSurname() + " -> " + entry.getKey());
+            AtomicInteger counter = new AtomicInteger(1);
+            contactStorage.values().stream().sorted(Comparator.comparing((Contact contact) -> contact.getName().toLowerCase())
+                            .thenComparing(contact -> contact.getSurname().toLowerCase()))
+                    .forEach(contact -> System.out.printf("%d) %s\n",counter.getAndIncrement(), contact));
 
-             }
         }
+
     }
 
-
+    public Map<String, Contact> getContactStorage() {
+        return contactStorage;
+    }
 }

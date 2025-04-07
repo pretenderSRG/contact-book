@@ -3,7 +3,7 @@ package org.example.contact_book.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Contact implements Serializable, Comparable {
+public class Contact implements Serializable, Comparable<Contact> {
     private static final long serialVersionUID = 1L;
     private String phoneNumber;
     private String name;
@@ -82,12 +82,12 @@ public class Contact implements Serializable, Comparable {
 
     @Override
     public String toString() {
-        return "\n" + name + "\n  " + surname + "\n\t" + phoneNumber + "\n\t" + email + "\n\t" + description;
+        return name + " " + surname + "\n\t" + phoneNumber + "\n\t" + email + "\n\t" + description;
     }
 
     @Override
-    public int compareTo(Object o) {
-        Contact other = (Contact) o;
-        return name.compareTo(other.name);
+    public int compareTo(Contact otherContact) {
+        int result = this.surname.compareTo(otherContact.surname);
+        return result != 0 ? result : this.name.compareTo(otherContact.name);
     }
 }

@@ -3,6 +3,7 @@ package org.example.contact_book.service;
 import org.example.contact_book.model.Contact;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class ContactSearch {
@@ -39,21 +40,25 @@ public class ContactSearch {
         if (searchingResult == null || searchingResult.isEmpty()) {
             System.out.println("Нічого не знайдено\n");
         } else {
+            AtomicInteger counter = new AtomicInteger(1);
             for (Contact contact : searchingResult) {
-                System.out.println(contact);
+                System.out.printf("%d) %s",counter.getAndIncrement(),contact);
                 System.out.println();
             }
         }
     }
 
-    public void search(Scanner scanner) {
+    private void showSearchMenu() {
         System.out.println("=== Меню пошуку ===");
         System.out.println("\t1. Пошук по номеру телефону");
         System.out.println("\t2. Пошук по імені");
         System.out.println("\t3. Пошук по прізвищу");
         System.out.println("\t0. Вийти");
         System.out.print("Ваш вибір: ");
+    }
 
+    public void search(Scanner scanner) {
+        showSearchMenu();
         scanner.nextLine();
 
         try {
@@ -83,6 +88,10 @@ public class ContactSearch {
                     System.out.println("Введіть цифру від 0 до 3");
             }
             printSearchResult(searchResult);
+            if (!searchResult.isEmpty()) {
+                ContactEditor contactEditor = new ContactEditor(searchResult, contactManager);
+                contactEditor.editOrDelete(scanner);
+            }
 
         } catch (InputMismatchException e) {
             System.out.println("Не правильний ввід. Введіть цифру 0 - 3");

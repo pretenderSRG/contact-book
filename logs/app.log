@@ -1,0 +1,6 @@
+2025-04-09 13:00:46 [main] DEBUG org.example.contact_book.App - Start applications
+2025-04-09 13:58:46 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-10 11:12:04 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-10 11:54:46 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380123 (6)
+2025-04-10 11:56:26 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-10 11:56:26 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380123 (6)

@@ -3,11 +3,17 @@ package org.example.contact_book;
 import org.example.contact_book.service.ContactManager;
 import org.example.contact_book.service.ContactSearch;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
+    private final static Logger logger = LoggerFactory.getLogger(App.class);
+
     public static void main(String[] args) {
+        logger.info("Start applications");
         System.out.println("Проста книга з контактами");
 
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +32,8 @@ public class App {
 
             try {
                 int userChoice = scanner.nextInt();
+                logger.debug("Користувач вибрав пункт меню: {}",userChoice);
+
 
                 switch (userChoice) {
                     case 0:
@@ -50,13 +58,13 @@ public class App {
                         break;
                     default:
                         System.out.println("Не правильний ввід. Введіть цифру 0 - 3");
+                        logger.warn("Користувач ввів не правильне число ({})", userChoice);
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Введіть цифру від 0 до 3");
+                logger.error("Не віриний ввід, користувач ввів не число ", e);
                 scanner.nextLine();
             }
-
-
         }
         scanner.close();
 

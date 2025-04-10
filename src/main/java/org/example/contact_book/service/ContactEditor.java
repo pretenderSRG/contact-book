@@ -1,13 +1,14 @@
 package org.example.contact_book.service;
 
 import org.example.contact_book.model.Contact;
+import org.example.contact_book.util.Loggable;
 import org.example.contact_book.util.PhoneUtils;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class ContactEditor {
+public class ContactEditor implements Loggable {
     private List<Contact> contactList;
     private ContactManager contactManager;
 
@@ -37,35 +38,36 @@ public class ContactEditor {
         System.out.println("Виберіть контакт для редагування, або 0 для виходу");
         int userIndexChoice = scanner.nextInt();
         if (userIndexChoice == 0) {
+            logger().info("User input 0, cancel edit");
             return;
         }
 
         try {
-            Contact editabledContact = contactList.get(userIndexChoice - 1);
+            Contact editableContact = contactList.get(userIndexChoice - 1);
             showEditMenu();
             int userChoice = scanner.nextInt();
             scanner.nextLine();
 
             switch (userChoice) {
                 case 1:
-                    editContact(editabledContact, scanner);
-                    System.out.println("Контакт редаговано успішно");
+                    editContact(editableContact, scanner);
+                    logger().info("Контакт редаговано успішно");
                     break;
 
                 case 2:
-                    deleteContact(editabledContact);
-                    System.out.println("Контакт видалено успішно");
+                    deleteContact(editableContact);
+                    logger().info("Контакт видалено успішно");
                     break;
 
                 case 0:
                     return;
                 default:
-                    System.out.println("Не вірний вибір. Виберіть 1, 2 або 0");
+                    logger().warn("Не вірний вибір. Виберіть 1, 2 або 0");
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Користувача з таким порядковим номером не існує");
+            logger().error("Користувача з таким порядковим номером не існує");
         } catch (InputMismatchException e) {
-            System.out.println("Введіть цифру від 0 до 2");
+            logger().error("Введіть цифру від 0 до 2");
         }
 
     }

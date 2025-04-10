@@ -1,12 +1,13 @@
 package org.example.contact_book.service;
 
 import org.example.contact_book.model.Contact;
+import org.example.contact_book.util.Loggable;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-public class ContactSearch {
+public class ContactSearch implements Loggable {
     private ContactManager contactManager;
     private Map<String, Contact> contactStorage;
 
@@ -38,11 +39,11 @@ public class ContactSearch {
 
     public void printSearchResult(List<Contact> searchingResult) {
         if (searchingResult == null || searchingResult.isEmpty()) {
-            System.out.println("Нічого не знайдено\n");
+            logger().info("Нічого не знайдено\n");
         } else {
             AtomicInteger counter = new AtomicInteger(1);
             for (Contact contact : searchingResult) {
-                System.out.printf("%d) %s",counter.getAndIncrement(),contact);
+                System.out.printf("%d) %s", counter.getAndIncrement(), contact);
                 System.out.println();
             }
         }
@@ -85,6 +86,7 @@ public class ContactSearch {
                     break;
                 default:
                     searchResult = new ArrayList<>();
+                    logger().warn("Не вірний ввід");
                     System.out.println("Введіть цифру від 0 до 3");
             }
             printSearchResult(searchResult);
@@ -94,7 +96,8 @@ public class ContactSearch {
             }
 
         } catch (InputMismatchException e) {
-            System.out.println("Не правильний ввід. Введіть цифру 0 - 3");
+            logger().error("Не правильний ввід. Введіть цифру 0 - 3");
+            scanner.nextLine();
         }
 
 

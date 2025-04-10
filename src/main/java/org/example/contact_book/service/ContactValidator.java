@@ -1,11 +1,15 @@
 package org.example.contact_book.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ContactValidator {
 
     public static boolean isPhoneNumberValid(String phoneNumber) {
+        Logger logger = LoggerFactory.getLogger(ContactValidator.class);
         String phoneRegex = "\\+380\\s?\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}";
         if (phoneNumber == null || !phoneNumber.matches(phoneRegex)) {
-            System.out.println("Номер недійсний. Введіть у форматі +380 XX XXX XX XX");
+            logger.error("Номер недійсний. Введіть у форматі +380 XX XXX XX XX");
             return false;
         }
         return true;

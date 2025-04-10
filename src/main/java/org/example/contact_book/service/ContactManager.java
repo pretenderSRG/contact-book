@@ -2,12 +2,13 @@ package org.example.contact_book.service;
 
 import org.example.contact_book.model.Contact;
 import org.example.contact_book.util.FileStorageService;
+import org.example.contact_book.util.Loggable;
 import org.example.contact_book.util.PhoneUtils;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ContactManager {
+public class ContactManager implements Loggable {
     private FileStorageService fileStorage;
     private Map<String, Contact> contactStorage;
 
@@ -20,12 +21,12 @@ public class ContactManager {
         String contactPhoneNumber = contact.getPhoneNumber();
 
         if (!ContactValidator.isPhoneNumberValid(contactPhoneNumber)) {
-            System.out.println("Не правильний номер телефону");
+            logger().debug("Не правильний номер телефону");
         } else if (!ContactValidator.isEmailValid(contact.getEmail())) {
-            System.out.println("Не правильний email");
+            logger().debug("Не правильний email");
         } else {
             contactStorage.put(contactPhoneNumber, contact);
-            System.out.println("Додано контакт:");
+            logger().info("Додано контакт:");
             System.out.println(contact);
             fileStorage.writeDataToFile(contactStorage);
         }
@@ -36,6 +37,7 @@ public class ContactManager {
 
         System.out.print("\tВведіть номер телефону: ");
         scanner.nextLine();
+
         String phoneNumber = PhoneUtils.normalizePhoneNumber(scanner.nextLine());
 
         System.out.print("\tВведіть ім'я: ");
@@ -47,7 +49,9 @@ public class ContactManager {
         System.out.print("\tВведіть email: ");
         String email = scanner.nextLine();
         if (email.isEmpty()) {
-            email = "no_email@email.com";
+            logger().info("Email is empty");
+            email = "NO_email@email.com";
+            logger().info("Email порожній");
         }
 
         System.out.print("\tВведіть короткий опис контакту: ");
@@ -55,10 +59,12 @@ public class ContactManager {
 
         Contact newContact = new Contact(name, surname, phoneNumber, email, description);
         if (contactStorage.containsKey(newContact.getPhoneNumber())) {
-            System.out.println("Контакт з таким номером вже існує");
+            logger().warn("Контакт з таким номером вже існує");
             return;
         }
 
+        logger().info("Контакт додано в базу: {} {} - {}",
+                newContact.getPhoneNumber(),newContact.getSurname(), newContact.getPhoneNumber());
         putContactToBase(newContact);
 
     }
@@ -66,6 +72,8 @@ public class ContactManager {
     public void deleteContact(Contact contact) {
         contactStorage.remove(contact.getPhoneNumber());
         fileStorage.writeDataToFile(contactStorage);
+        logger().info("Контакт видалено: {} {} - {}",
+                contact.getPhoneNumber(),contact.getSurname(), contact.getPhoneNumber());
     }
 
     public void showAllContacts() {

@@ -66,6 +66,7 @@ public class ContactEditor implements Loggable {
             }
         } catch (IndexOutOfBoundsException e) {
             logger().error("Користувача з таким порядковим номером не існує");
+            System.out.println("Вибрано неіснуючий контакт. Спробуйте ще раз.");
         } catch (InputMismatchException e) {
             logger().error("Введіть цифру від 0 до 2");
         }

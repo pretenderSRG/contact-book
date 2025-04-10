@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ContactValidator {
+    private final  static Logger logger = LoggerFactory.getLogger(ContactValidator.class);
 
     public static boolean isPhoneNumberValid(String phoneNumber) {
-        Logger logger = LoggerFactory.getLogger(ContactValidator.class);
         String phoneRegex = "\\+380\\s?\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}";
         if (phoneNumber == null || !phoneNumber.matches(phoneRegex)) {
             logger.error("Номер недійсний. Введіть у форматі +380 XX XXX XX XX");

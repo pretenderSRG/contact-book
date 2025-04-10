@@ -23,12 +23,7 @@ public class App {
         boolean isRunning = true;
 
         while (isRunning) {
-            System.out.println("=== Головне меню ===");
-            System.out.println("1. Додати контакт");
-            System.out.println("2. Пошук контакту");
-            System.out.println("3. Переглянути всі контакти");
-            System.out.println("0. Вийти");
-            System.out.print("Ваш вибір: ");
+            showMainMenu();
 
             try {
                 int userChoice = scanner.nextInt();
@@ -68,5 +63,13 @@ public class App {
         }
         scanner.close();
 
+    }
+    private static void showMainMenu() {
+        System.out.println("=== Головне меню ===");
+            System.out.println("1. Додати контакт");
+            System.out.println("2. Пошук контакту");
+            System.out.println("3. Переглянути всі контакти");
+            System.out.println("0. Вийти");
+            System.out.print("Ваш вибір: ");
     }
 }

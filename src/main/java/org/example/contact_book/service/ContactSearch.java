@@ -10,9 +10,16 @@ import java.util.stream.Collectors;
 public class ContactSearch implements Loggable {
     private ContactManager contactManager;
     private Map<String, Contact> contactStorage;
+    private ContactEditor contactEditor;
 
     public ContactSearch(ContactManager contactManager) {
         this.contactManager = contactManager;
+        this.contactStorage = contactManager.getContactStorage();
+    }
+
+    public ContactSearch(ContactManager contactManager, ContactEditor contactEditor){
+        this.contactManager = contactManager;
+        this.contactEditor = contactEditor;
         this.contactStorage = contactManager.getContactStorage();
     }
 
@@ -60,15 +67,15 @@ public class ContactSearch implements Loggable {
 
     public void search(Scanner scanner) {
         showSearchMenu();
-        scanner.nextLine();
+//        scanner.nextLine();
 
         try {
-            List<Contact> searchResult = null;
+            List<Contact> searchResult;
             int userChoice = scanner.nextInt();
             scanner.nextLine();
             switch (userChoice) {
                 case 0:
-                    break;
+                    return;
                 case 1:
                     System.out.println("Введіть номер телелефону (або частину номеру) для пошуку:");
                     String searchingNumber = scanner.nextLine();
@@ -91,8 +98,8 @@ public class ContactSearch implements Loggable {
             }
             printSearchResult(searchResult);
             if (!searchResult.isEmpty()) {
-                ContactEditor contactEditor = new ContactEditor(searchResult, contactManager);
-                contactEditor.editOrDelete(scanner);
+                if (this.contactEditor == null) contactEditor = new ContactEditor(searchResult, contactManager);
+                this.contactEditor.editOrDelete(scanner);
             }
 
         } catch (InputMismatchException e) {

@@ -96,12 +96,12 @@ public class ContactManagerTest {
 
         contactManager.createContact(scanner);
 
-        assertTrue(contactManager.getContactStorage().containsKey("+380 11 111 11 11"));
+        assertTrue(contactManager.getContactStorage().containsKey("+380111111111"));
 
-        Contact createdContact = contactManager.getContactStorage().get("+380 11 111 11 11");
+        Contact createdContact = contactManager.getContactStorage().get("+380111111111");
         assertEquals("Іван", createdContact.getName());
         assertEquals("Мельник", createdContact.getSurname());
-        assertEquals("+380 11 111 11 11", createdContact.getPhoneNumber());
+        assertEquals("+380111111111", createdContact.getPhoneNumber());
         assertEquals("ivan@example.com", createdContact.getEmail());
         assertEquals("Опис", createdContact.getDescription());
         verify(mockFileStorage, times(1)).writeDataToFile(mockContactStorage);

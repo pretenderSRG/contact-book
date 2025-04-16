@@ -21,11 +21,12 @@ public class PhoneUtils implements Loggable{
 
         }
         logger.info("Номер відформатовано, згідно стандарту");
-        return String.format("+%s %s %s %s %s",
-                cleanNumber.substring(0, 3),  // Код країни
-                cleanNumber.substring(3, 5), // Код оператора
-                cleanNumber.substring(5, 8), // Перша частина номера
-                cleanNumber.substring(8, 10),// Друга частина номера
-                cleanNumber.substring(10, 12));
+//        return String.format("+%s %s %s %s %s",
+//                cleanNumber.substring(0, 3),  // Код країни
+//                cleanNumber.substring(3, 5), // Код оператора
+//                cleanNumber.substring(5, 8), // Перша частина номера
+//                cleanNumber.substring(8, 10),// Друга частина номера
+//                cleanNumber.substring(10, 12));
+        return "+" + cleanNumber;
     }
 }

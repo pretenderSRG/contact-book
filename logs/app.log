@@ -1,3 +1,102 @@
-2025-04-14 10:31:48 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 3801234 (7)
-2025-04-14 10:31:48 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
-2025-04-14 10:31:48 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 11:56:06 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 12:04:15 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 12:04:15 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 12:30:20 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 12:30:20 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 12:30:20 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: 1111 Мельник - 1111
+2025-04-15 12:48:18 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 12:48:18 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 12:48:18 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: 1111 Мельник - 1111
+2025-04-15 12:50:59 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: 1111 Мельник - 1111
+2025-04-15 13:40:32 [main] WARN  o.e.c.service.ContactManager - Контакта 1111 Мельник - 1111 не має в базі
+2025-04-15 14:54:20 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-15 14:54:23 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 3
+2025-04-15 14:54:34 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 14:54:36 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 14:55:27 [main] WARN  o.e.c.service.ContactManager - Контакт з таким номером вже існує
+2025-04-15 14:56:15 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 14:56:22 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 14:57:03 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 14:57:23 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 3
+2025-04-15 15:35:13 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 15:43:20 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 15:43:37 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 15:44:32 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:05:12 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:46:28 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:47:03 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-15 16:47:07 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 16:47:07 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:47:14 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 16:47:14 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:47:27 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-15 16:47:29 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 16:47:41 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 3803 (4)
+2025-04-15 16:50:52 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-15 16:50:54 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 16:51:02 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 38032 (5)
+2025-04-15 16:51:05 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 0
+2025-04-15 16:51:15 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:51:15 [main] WARN  o.e.c.service.ContactManager - Контакта 1111 Мельник - 1111 не має в базі
+2025-04-15 16:51:15 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:51:15 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: +380 99 876 55 44 Мельник - +380 99 876 55 44
+2025-04-15 16:51:15 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:51:15 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 16:51:15 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 16:51:15 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 16:51:15 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 16:51:15 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 3801234 (7)
+2025-04-15 16:51:15 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 16:54:00 [main] INFO  org.example.contact_book.App - Start applications
+2025-04-15 16:54:02 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 1
+2025-04-15 16:54:05 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:54:08 [main] DEBUG org.example.contact_book.App - Користувач вибрав пункт меню: 0
+2025-04-15 16:54:16 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:54:16 [main] WARN  o.e.c.service.ContactManager - Контакта 1111 Мельник - 1111 не має в базі
+2025-04-15 16:54:16 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:54:16 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: +380 99 876 55 44 Мельник - +380 99 876 55 44
+2025-04-15 16:54:16 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:54:16 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 16:54:16 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 16:54:43 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:55:16 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:55:53 [main] WARN  o.e.c.service.ContactManager - Контакта 1111 Мельник - 1111 не має в базі
+2025-04-15 16:56:25 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:56:25 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: +380 99 876 55 44 Мельник - +380 99 876 55 44
+2025-04-15 16:56:49 [main] WARN  o.e.c.service.ContactManager - Контакта 1111 Мельник - 1111 не має в базі
+2025-04-15 16:56:55 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 16:57:11 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 16:57:11 [main] INFO  o.e.c.service.ContactManager - Контакт видалено: +380 99 876 55 44 Мельник - +380 99 876 55 44
+2025-04-15 17:03:09 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 17:03:30 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
+2025-04-15 17:05:36 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 17:05:36 [main] INFO  o.e.c.service.ContactManager - Контакт додано в базу: +380 11 111 11 11 Мельник - +380 11 111 11 11
+2025-04-15 17:05:36 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 17:30:30 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 17:30:30 [main] INFO  o.e.c.service.ContactManager - Контакт додано в базу: +380 11 111 11 11 Мельник - +380 11 111 11 11
+2025-04-15 17:30:30 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 17:41:13 [main] INFO  o.e.contact_book.util.PhoneUtils - Номер відформатовано, згідно стандарту
+2025-04-15 17:41:13 [main] INFO  o.e.c.service.ContactManager - Контакт додано в базу: +380 11 111 11 11 Мельник - +380 11 111 11 11
+2025-04-15 17:41:13 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 17:41:45 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380111111 (9)
+2025-04-15 17:44:29 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380111111 (9)
+2025-04-15 17:45:15 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380111111 (9)
+2025-04-15 17:51:43 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380111111 (9)
+2025-04-15 17:52:16 [main] ERROR o.e.c.service.ContactValidator - Номер недійсний. Введіть у форматі +380 XX XXX XX XX
+2025-04-15 17:52:16 [main] DEBUG o.e.c.service.ContactManager - Не правильний номер телефону
+2025-04-15 17:54:51 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380111111 (9)
+2025-04-15 18:30:53 [main] DEBUG o.e.c.service.ContactManager - Не правильний email
+2025-04-15 18:30:53 [main] DEBUG o.e.c.service.ContactManager - Не правильний email
+2025-04-15 18:31:21 [main] DEBUG o.e.c.service.ContactManager - Не правильний email
+2025-04-15 19:22:29 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:22:29 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:22:29 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:11 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:11 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:11 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:50 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:50 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:23:50 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:29:16 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:29:16 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-15 19:29:16 [main] INFO  o.e.c.service.ContactManager - Додано контакт:

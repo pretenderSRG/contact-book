@@ -27,6 +27,7 @@ public class App {
 
             try {
                 int userChoice = scanner.nextInt();
+                scanner.nextLine();
                 logger.debug("Користувач вибрав пункт меню: {}",userChoice);
 
 

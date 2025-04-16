@@ -17,18 +17,33 @@ public class ContactManager implements Loggable {
         contactStorage = fileStorage.readDataFromFile();
     }
 
-    public void putContactToBase(Contact contact) {
+    public  ContactManager(String pathToContactBase, FileStorageService fileStorageService) {
+        this.fileStorage = fileStorageService;
+        this.contactStorage = fileStorage.readDataFromFile();
+    }
+
+    public boolean putContactToBase(Contact contact) {
         String contactPhoneNumber = contact.getPhoneNumber();
 
         if (!ContactValidator.isPhoneNumberValid(contactPhoneNumber)) {
             logger().debug("Не правильний номер телефону");
+            System.out.println("Номер телефону введено неправильно");
+            return false;
         } else if (!ContactValidator.isEmailValid(contact.getEmail())) {
             logger().debug("Не правильний email");
+            System.out.println("Email введено неправильно");
+            return false;
+        } else if (contactStorage.containsKey(contactPhoneNumber)) {
+            logger().debug("Номер телефону вже є в базі");
+            System.out.println("Контакт з таким номером телефону існує");
+            return false;
         } else {
             contactStorage.put(contactPhoneNumber, contact);
             logger().info("Додано контакт:");
+            System.out.println("Контакт створено успішо");
             System.out.println(contact);
             fileStorage.writeDataToFile(contactStorage);
+            return true;
         }
     }
 
@@ -36,9 +51,11 @@ public class ContactManager implements Loggable {
         System.out.println("Введіть дані для створення нового контакту:");
 
         System.out.print("\tВведіть номер телефону: ");
-        scanner.nextLine();
+//        scanner.nextLine();
+        String inputLine = scanner.nextLine();
+        while (inputLine.isBlank()) inputLine = scanner.nextLine();
 
-        String phoneNumber = PhoneUtils.normalizePhoneNumber(scanner.nextLine());
+        String phoneNumber = PhoneUtils.normalizePhoneNumber(inputLine);
 
         System.out.print("\tВведіть ім'я: ");
         String name = scanner.nextLine();
@@ -70,10 +87,16 @@ public class ContactManager implements Loggable {
     }
 
     public void deleteContact(Contact contact) {
-        contactStorage.remove(contact.getPhoneNumber());
-        fileStorage.writeDataToFile(contactStorage);
-        logger().info("Контакт видалено: {} {} - {}",
-                contact.getPhoneNumber(),contact.getSurname(), contact.getPhoneNumber());
+        String contactPhoneNumber = contact.getPhoneNumber();
+        if (contactStorage.containsKey(contactPhoneNumber)) {
+            contactStorage.remove(contact.getPhoneNumber());
+            fileStorage.writeDataToFile(contactStorage);
+            logger().info("Контакт видалено: {} {} - {}",
+                    contact.getPhoneNumber(), contact.getName(), contact.getSurname());
+        } else {
+            logger().warn("Контакта {} {} - {} не має в базі",
+                    contact.getPhoneNumber(), contact.getName(), contact.getSurname());
+        }
     }
 
     public void showAllContacts() {
@@ -92,4 +115,5 @@ public class ContactManager implements Loggable {
     public Map<String, Contact> getContactStorage() {
         return contactStorage;
     }
+
 }

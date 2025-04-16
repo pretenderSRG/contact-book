@@ -104,7 +104,7 @@ public class ContactEditor implements Loggable {
         String newDescription = scanner.nextLine();
         newContact.setDescription(!newDescription.isEmpty() ? newDescription : contact.getDescription());
 
-        deleteContact(contact);
+        deleteContact(contact);  // Видалення старого контакту
 
         contactManager.putContactToBase(newContact);
 

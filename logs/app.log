@@ -1,10 +1,2 @@
-2025-04-18 11:28:47 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 380 (3)
-2025-04-18 11:29:32 [main] ERROR o.e.contact_book.util.PhoneUtils - Невірна довжина номеру : 3802 (4)
-2025-04-18 11:30:20 [main] INFO  o.e.c.service.ContactEditor - Контакт редаговано успішно
-2025-04-18 12:25:13 [main] INFO  o.e.c.service.ContactEditor - Контакт редаговано успішно
-2025-04-18 12:27:44 [main] INFO  o.e.c.service.ContactEditor - Контакт редаговано успішно
-2025-04-18 13:16:06 [main] ERROR o.e.c.service.ContactEditor - Користувача з таким порядковим номером не існує
-2025-04-18 13:16:32 [main] INFO  o.e.c.service.ContactEditor - Контакт редаговано успішно
-2025-04-18 13:16:32 [main] ERROR o.e.c.service.ContactEditor - Користувача з таким порядковим номером не існує
-2025-04-18 13:16:32 [main] INFO  o.e.c.service.ContactEditor - Контакт видалено успішно
-2025-04-18 13:17:39 [main] INFO  o.e.c.service.ContactEditor - Контакт редаговано успішно
+2025-04-23 15:56:38 [main] INFO  o.e.c.service.ContactManager - Додано контакт:
+2025-04-23 16:04:55 [main] INFO  o.e.c.service.ContactManager - Додано контакт:

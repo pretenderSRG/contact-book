@@ -5,9 +5,10 @@ import org.slf4j.LoggerFactory;
 
 public class ContactValidator {
     private final  static Logger logger = LoggerFactory.getLogger(ContactValidator.class);
+    private final static String phoneRegex = "\\+380\\s?\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}";
+    private final static String emailRegex = "\\w+@\\w+\\.[a-zA-Z]{2,6}";
 
     public static boolean isPhoneNumberValid(String phoneNumber) {
-        String phoneRegex = "\\+380\\s?\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}";
         if (phoneNumber == null || !phoneNumber.matches(phoneRegex)) {
             logger.error("Номер недійсний. Введіть у форматі +380 XX XXX XX XX");
             return false;
@@ -16,6 +17,7 @@ public class ContactValidator {
     }
 
     public static boolean isEmailValid(String contactEmail) {
-        return contactEmail.matches("\\w+@\\w+\\.[a-zA-Z]{2,6}") || contactEmail.isEmpty();
+        if (contactEmail == null) return false;
+        return contactEmail.matches(emailRegex) || contactEmail.isEmpty();
     }
 }

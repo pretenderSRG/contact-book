@@ -51,7 +51,6 @@ public class ContactDao {
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Помилка при додаванні контакту");
             logger.error("Помилка при додаванні контакту {}", e.getMessage());
         }
     }
@@ -133,9 +132,40 @@ public class ContactDao {
                 result.add(contact);
             }
         } catch (SQLException e) {
-            System.out.println("Помилка пошуку");
-            logger.error("Помилка при пошуку контактів {}", e);
+            logger.error("Помилка при пошуку контактів {}", e.getMessage());
         }
         return result;
+    }
+
+    public void updateContact(Contact contact) {
+        String sql = "UPDATE contacts SET " +
+                "name = ?, " +
+                "surname = ?, " +
+                "phone = ?, " +
+                "email = ?, " +
+                "description = ?;";
+        try (Connection conn = DriverManager.getConnection(url);
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, contact.getName());
+            pstmt.setString(2, contact.getSurname());
+            pstmt.setString(3, contact.getPhoneNumber());
+            pstmt.setString(4, contact.getEmail());
+            pstmt.setString(5, contact.getDescription());
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            logger.error("Помилка при редагуванні контакту {}", e.getMessage());
+        }
+    }
+
+    public void deleteContactByPhone(String phone) {
+        String sql = "DELETE FROM contacts WHERE phone = ?";
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, phone);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Помилка при видаленні контакту з номером {} {}", phone, e.getMessage());
+        }
     }
 }

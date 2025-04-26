@@ -2,6 +2,7 @@ package org.example.contact_book2;
 
 import org.example.contact_book2.dao.ContactDao;
 import org.example.contact_book2.service.ContactService;
+import org.example.contact_book2.ui.ConsoleUI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,36 +17,9 @@ public class App {
         ContactDao contactDao = new ContactDao(dbUrl);
         ContactService contactService = new ContactService(contactDao);
 
-        Scanner scanner = new Scanner(System.in);
-
-        boolean isRunning = true;
-        logger.info("Програму запущено");
-        while (isRunning) {
-            showMenu();
-            int choice = Integer.parseInt(scanner.nextLine());
-
-            switch (choice) {
-                case 1 -> contactService.createContact(scanner);
-                case 2 -> contactService.searchContact(scanner);
-                case 3 -> contactService.shoeAllContacts();
-                case 0 -> {
-                    System.out.println("Роботу програми завершено!");
-                    isRunning = false;
-                }
-                default -> System.out.println("Невідомий вибір.");
-            }
-        }
-        scanner.close();
+        ConsoleUI ui = new ConsoleUI(contactService);
+        ui.start();
     }
 
-    private static void showMenu() {
-        System.out.println("""
-                === Головне меню ===
-                1. Додати контакт
-                2. Пошук
-                3. Показати всі
-                0. Вийти
-                Ваш вибір: 
-                """);
-    }
+
 }

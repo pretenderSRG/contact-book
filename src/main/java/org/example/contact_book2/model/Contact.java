@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Contact implements Comparable<Contact> {
+    private int id;
     private String phoneNumber;
     private String name;
     private String surname;
@@ -13,7 +14,7 @@ public class Contact implements Comparable<Contact> {
     public Contact() {
     }
 
-    public Contact(String phoneNumber, String name) {
+    public Contact(String name, String phoneNumber) {
         this.phoneNumber = phoneNumber;
         this.name = name;
     }
@@ -26,6 +27,28 @@ public class Contact implements Comparable<Contact> {
         this.description = description;
     }
 
+    public Contact(int id, String name, String surname, String phoneNumber, String email, String description) {
+        this.id = id;
+        this.phoneNumber = phoneNumber;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.description = description;
+    }
+
+    public Contact(int id, String name, String phoneNumber) {
+        this.id = id;
+        this.phoneNumber = phoneNumber;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;

@@ -2,7 +2,8 @@ package org.example.contact_book2.utils;
 
 public class ValidationUtils {
 
-    private final static String emailRegex = "\\w+@\\w+\\.[a-zA-Z]{2,6}";
+    private final static String emailRegex = "^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
+;
     private final static String phoneRegex = "\\d{10}|\\d{12}";
 
     public static boolean isPhoneNumberValid(String phoneNumber) {

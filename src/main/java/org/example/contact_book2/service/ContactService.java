@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class ContactService {
-    private final static Logger logger = LoggerFactory.getLogger(ContactDao.class);
+    private final static Logger logger = LoggerFactory.getLogger(ContactService.class);
     private final ContactDao contactDao;
 
     public ContactService(ContactDao contactDao) {

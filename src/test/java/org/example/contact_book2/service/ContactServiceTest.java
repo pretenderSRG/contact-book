@@ -111,7 +111,7 @@ class ContactServiceTest {
         when(mockContactDao.searchByName(name)).thenReturn(List.of(contact));
 
         // act
-        List<Contact> result = contactService.searchByName("Jane");
+        List<Contact> result = contactService.searchByName(name);
 
         // assert
         assertEquals(1, result.size());

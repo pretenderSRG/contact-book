@@ -76,6 +76,7 @@ public class ContactDao {
 
             while (rs.next()) {
                 Contact contact = new Contact(
+                        rs.getInt("id"),
                         rs.getString("name"),
                         rs.getString("surname"),
                         rs.getString("phone"),

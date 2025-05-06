@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class App {
     private static final Logger logger = LoggerFactory.getLogger(App.class);
     public static void main(String[] args) {
+        logger.info("Start app");
         System.out.println("Контакт Бук 2.0 — SQLite edition \uD83D\uDCD2");
 
         String dbUrl = "jdbc:sqlite:src/main/resources/contact_book.db";

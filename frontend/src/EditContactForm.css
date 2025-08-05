@@ -1,0 +1,142 @@
+.edit-form {
+    background-color: #fcf5e5;
+    border: 1px solid #d8c48c;
+    padding: 25px 30px;
+    max-width: 500px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    margin: 50px auto;
+    border-radius: 6px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25),
+        -5px -5px 15px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.edit-form::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    width: 10px;
+    height: 90%;
+    background-color: #c4b998;
+    border-right: 2px dotted #8c7a53;
+    box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form label {
+    display: block;
+    margin-bottom: 18px;
+    color: #3c2f1e;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.edit-form input {
+    width: 100%;
+    padding: 6px 10px;
+    margin-top: 6px;
+    border: 1px solid #bca97c;
+    background-color: #fffdf6;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.edit-form input:focus {
+    border-color: #8c7a53;
+    box-shadow: 0 0 5px rgba(140, 122, 83, 0.5);
+}
+
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-form button {
+    padding: 8px 18px;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    background-color: #c4a65a;
+    border: 1px solid #a4863d;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-form button:hover {
+    background-color: #a4863d;
+    transform: scale(1.03);
+}
+
+.edit-form button:active {
+    transform: scale(0.97);
+}
+
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 6px 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 15px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-bar input[type="text"] {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .contact-form,
+    .edit-form {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .edit-form input,
+    .contact-form textarea,
+    .edit-form textarea {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .contact-list li {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .actions {
+        top: 5px;
+        right: 5px;
+    }
+
+    .contact-form button,
+    .edit-form button,
+    .top-bar button,
+    .pagination button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .pagination button {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+

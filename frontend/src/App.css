@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #fdf6e3;
+    color: #333;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fffef2;
+    border: 1px solid #d3cbb8;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: 2em;
+    color: #4b3e2a;
+    margin-bottom: 30px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.top-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #c4b89c;
+    border-radius: 4px;
+    background: #fefcf5;
+    margin-right: 10px;
+}
+
+.top-bar button {
+    padding: 10px 20px;
+    background-color: #b99b68;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+    background-color: #9c7d4b;
+}
+
+.contact-form {
+    background-color: #fffef6;
+    border: 1px solid #d8cba8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc6b3;
+    border-radius: 4px;
+    background-color: #fefcf4;
+    font-family: inherit;
+}
+
+.contact-form .error {
+    border-color: red;
+}
+
+.error-text {
+color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 6px 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.contact-form button {
+    padding: 8px 16px;
+    background-color: #7f6a45;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #5f5233;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    background-color: #fbf8ef;
+    border: 1px dashed #c4b28d;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    position: relative;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background: #d2c1a1;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagination button.active {
+    background: #a18b60;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 15px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-bar input[type="text"] {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .contact-form,
+    .edit-form {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .edit-form input,
+    .contact-form textarea,
+    .edit-form textarea {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .contact-list li {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .actions {
+        top: 5px;
+        right: 5px;
+    }
+
+    .contact-form button,
+    .edit-form button,
+    .top-bar button,
+    .pagination button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .pagination button {
+        padding: 10px;
+        font-size: 1em;
+    }
+}

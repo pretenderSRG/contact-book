@@ -17,9 +17,10 @@ Contacts are now stored in an SQLite database (contacts.db), instead of a binary
 > * Email format: simplified validation
 
 🧪 *Unit Tests:*
-ContactValidator – fully tested
 
-ContactManager – partially tested
+- ContactValidator – fully tested
+
+- ContactManager – partially tested
 
 🧰 *Technologies used:*
 - Java 17+

@@ -44,7 +44,7 @@ Clone the project:
 _Build the project with Maven:_
 
 
-> -mvn clean package
+> - mvn clean package
 _Run the application:_
 
 

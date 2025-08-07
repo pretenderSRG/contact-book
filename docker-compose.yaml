@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+    postgres:
+        image: postgres:16
+        container_name: contactbook_postgres
+        environment:
+            POSTGRES_DB: ${POSTGRES_DB:-contactdb}
+            POSTGRES_USER: ${POSTGRES_USER:-postgres}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+        ports:
+            - "5432:5432"
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        networks:
+            - contactbook-network
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}" ]
+            interval: 5s
+            timeout: 5s
+            retries: 10
+
+    backend:
+        build:
+            context: ./backend
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-contactdb}?socketTimeout=5
+            SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+            SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-password}
+            SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT: 30000
+            SPRING_DATASOURCE_HIKARI_VALIDATION_TIMEOUT: 5000
+        depends_on:
+            postgres:
+                condition: service_healthy
+        ports:
+            - "8080:8080"
+        networks:
+            - contactbook-network
+
+    frontend:
+        build:
+            context: ./frontend
+        ports:
+            - "80:80"
+        networks:
+            - contactbook-network
+
+networks:
+    contactbook-network:
+        driver: bridge
+
+volumes:
+    pgdata:

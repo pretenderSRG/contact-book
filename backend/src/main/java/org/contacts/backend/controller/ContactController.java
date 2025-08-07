@@ -12,11 +12,9 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class ContactController {
     private final ContactService service;
-    private final ContactService contactService;
 
-    public ContactController(ContactService service, ContactService contactService) {
+    public ContactController(ContactService service) {
         this.service = service;
-        this.contactService = contactService;
     }
 
     @GetMapping

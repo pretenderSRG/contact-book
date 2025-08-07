@@ -1,47 +1,55 @@
 # Contact Book 📒
 
-Проста консольна програма для збереження, перегляду та пошуку контактів.
+✅ ***v2.0 — Console App with SQLite Database***
 
----
+Contacts are now stored in an SQLite database (contacts.db), instead of a binary file.
 
-## 🔄 Поточна версія
+📌 *Features:*
+> * Add a new contact
 
-**v2.0** — перехід на зберігання контактів у **SQLite** замість бінарного файлу.
+> * View all contacts
 
-## 🕰 Історія версій
+> * Search contacts by name, phone number, or email
 
-### ✅ v1.0 — Базова консольна реалізація
-- Контакти зберігаються у **бінарному файлі** (`contact_book.bin`)
-- Доступні можливості:
-  - Додавання нового контакту
-  - Перегляд усіх контактів
-  - Пошук контактів по імені, номеру або email
-- Валідація:
-  - Номер телефону у форматі `+380 XX XXX XX XX` або без пробілів
-  - Email (спрощена перевірка)
-- Покрито **юнiт-тестами**:
-  - `ContactValidator`
-  - `ContactManager` (частково)
+🔍 *Validation:*
+> * Phone number format: +380 XX XXX XX XX or without spaces
 
-### ⚙️ Технології v1.0:
+> * Email format: simplified validation
+
+🧪 *Unit Tests:*
+ContactValidator – fully tested
+
+ContactManager – partially tested
+
+🧰 *Technologies used:*
 - Java 17+
+
 - Maven
+
+- SQLite (via JDBC)
+
 - SLF4J + Logback
+
 - JUnit 5
 
----
+⚙️ *Installation & Run:*
+Clone the project:
 
-## ⚙️ Технології v2.0
 
-- Java 17+
-- SQLite
-- Maven
-- SLF4J + Logback
-- JUnit 5
+> - git clone https://github.com/pretenderSRG/contact-book.git
+> - cd contact-book
+> - git checkout v2.0
 
-## 🚀 Як запустити
+_Build the project with Maven:_
 
-1. Клонувати репозиторій:
-   ```bash
-   git clone https://github.com/твій_логін/contact_book.git
-   cd contact_book
+
+> -mvn clean package
+_Run the application:_
+
+
+> - java -jar target/contact-book.jar
+
+_Database file:_
+
+A new SQLite database file contacts.db will be created in the project root (or defined location).
+

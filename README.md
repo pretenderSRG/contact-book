@@ -1,29 +1,51 @@
-✅ v1.0 — Basic Console Implementation
-Contacts are stored in a binary file (contact_book.bin).
+# Contact Book 📒
 
-📌 Features:
-Add a new contact
+✅ ***v1.0 — Basic Console Implementation Contacts are stored in a binary file (contact_book.bin).***
 
-View all contacts
+📌 _Features: Add a new contact_
 
-Search contacts by name, phone number, or email
+> - View all contacts
 
-🔍 Validation:
-Phone number format: +380 XX XXX XX XX or without spaces
+> - Search contacts by name, phone number, or email
 
-Email format: simplified validation
+🔍 _Validation:_
 
-🧪 Unit Tests:
-ContactValidator – fully tested
+> - Phone number format: +380 XX XXX XX XX or without spaces
 
-ContactManager – partially tested
+> - Email format: simplified validation
 
-⚙️ Technologies used:
-Java 17+
+🧪 _Unit Tests:_
 
-Maven
+- ContactValidator – fully tested
 
-SLF4J + Logback
+- ContactManager – partially tested
 
-JUnit 5
+⚙️ _Technologies used:_
 
+- Java 17+
+
+- Maven
+
+- SLF4J + Logback
+
+- JUnit 5
+
+⚙️ _Installation & Run:_
+
+Clone the project:
+
+- git clone https://github.com/pretenderSRG/contact-book.git
+- cd contact-book
+- git checkout v1.0
+
+Build the project with Maven:
+
+- mvn clean package
+
+Run the application:
+
+- java -jar target/contact-book.jar
+
+Data file:
+
+- A file named contact_book.bin will be created automatically to store contact data.

@@ -1,3 +1,6 @@
+src/main/resources/contact_book.bin
+logs/
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

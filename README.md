@@ -2,50 +2,10 @@
 
 ✅ ***v1.0 — Basic Console Implementation Contacts are stored in a binary file (contact_book.bin).***
 
-📌 _Features: Add a new contact_
+✅ ***v2.0 — Console App with SQLite Database.*** 
+Contacts are now stored in an SQLite database (contacts.db), instead of a binary file.
 
-> - View all contacts
-
-> - Search contacts by name, phone number, or email
-
-🔍 _Validation:_
-
-> - Phone number format: +380 XX XXX XX XX or without spaces
-
-> - Email format: simplified validation
-
-🧪 _Unit Tests:_
-
-- ContactValidator – fully tested
-
-- ContactManager – partially tested
-
-⚙️ _Technologies used:_
-
-- Java 17+
-
-- Maven
-
-- SLF4J + Logback
-
-- JUnit 5
-
-⚙️ _Installation & Run:_
-
-Clone the project:
-
-- git clone https://github.com/pretenderSRG/contact-book.git
-- cd contact-book
-- git checkout v1.0
-
-Build the project with Maven:
-
-- mvn clean package
-
-Run the application:
-
-- java -jar target/contact-book.jar
-
-Data file:
-
-- A file named contact_book.bin will be created automatically to store contact data.
+✅*** v3.0 — React Contact Book (Web App). ***
+A responsive contact management web application built with React and Docker.
+Users can view, add, edit, and delete contacts with client-side validation and mobile-friendly design.
+✅*** v3.1 — The functionality of version 3.0 is expanding: the frontend, backend and database are run in separate Docker containers
